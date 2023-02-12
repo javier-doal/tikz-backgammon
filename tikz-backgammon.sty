@@ -36,11 +36,21 @@
 \bk@BW
 \draw[thick,style=\bk@fillstyle]
      (\x,0) -- (\x+3/2,15) -- (\x+3,0) -- cycle; }
+% construct a  down point %%%%%%%%%%%%%%%% change initial color to right %%%%%%%%%%
+\newcommand*{\bk@dpointr}{%
+\bk@WB
+\draw[thick,style=\bk@fillstyle]
+     (\x,0) -- (\x+3/2,15) -- (\x+3,0) -- cycle; }	 
 % construct an up point
 \newcommand{\bk@upoint}{%
 \bk@WB
 \draw[thick,style=\bk@fillstyle]
      (\x,32) -- (\x+3/2,17) -- (\x+3,32) -- cycle; }
+% construct an up point %%%%%%%%%%%%%%%%% change initial color to right %%%%%%%%%%
+\newcommand{\bk@upointr}{%
+\bk@BW
+\draw[thick,style=\bk@fillstyle]
+     (\x,32) -- (\x+3/2,17) -- (\x+3,32) -- cycle; } 	 
 % set basic tikz parameters for the board points, dice, and stones;
 % in order to scale text and nodes, node styles are specified 'transform shape'
 %   
@@ -156,11 +166,11 @@
   \coordinate (caption) at (19.5,-4);
   \coordinate (offblack) at (-4,4);
   \coordinate (offwhite) at (-4,28);
-% draw the other half of the points
+% draw the other half of the points   %%%%% change initial color to right %%%%
   \foreach \x in {21,24,...,36}
-     \bk@dpoint;
+     \bk@dpointr;
   \foreach \x in {21,24,...,36}
-     \bk@upoint;
+     \bk@upointr;
 }
 %  commands to place markers on a point and set its state
 %  for users to make arbitrary board configurations
