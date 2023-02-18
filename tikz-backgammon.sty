@@ -55,13 +55,13 @@
 % in order to scale text and nodes, node styles are specified 'transform shape'
 %   
 \tikzset{1/.style={fill=\boardblack},
-				0/.style={fill=\boardwhite},
-				stone/.style={transform shape,draw=black,circle,minimum size=3*\defaultxy,inner sep=0pt,font={\sffamily},text={\bk@stonetextcolor}},
-				sans/.style={transform shape,font={\sffamily},inner sep=0pt,outer sep=0pt},
-				white double/.style={line color=\black,dice color=\white,text=\black}, %%% Colors stones defined %%%
-				black double/.style={line color=\black,dice color=\black,text=\white}, %%% Colors stones defined %%%
-				neutral double/.style={line color=\boardblack,dice color=\barcolor,text=\boardwhite}, %%% Colors board defined %%%
-				}
+			0/.style={fill=\boardwhite},
+			stone/.style={transform shape,draw=black,circle,minimum size=3*\defaultxy,inner sep=0pt,font={\sffamily},text={\bk@stonetextcolor}},
+			sans/.style={transform shape,font={\sffamily},inner sep=0pt,outer sep=0pt},
+			white double/.style={line color=\black,dice color=\white,text=\black}, %%% Colors stones defined %%%
+			black double/.style={line color=\black,dice color=\black,text=\white}, %%% Colors stones defined %%%
+			neutral double/.style={line color=\boardblack,dice color=\barcolor,text=\boardwhite}, %%% Colors board defined %%%
+			}
 
 % initialization
 % These should be made key values
@@ -184,7 +184,8 @@
 % same again for a white point (this is from point in whites view)
 \newcommand{\whitepoint}[2]{%
   \def\bk@tmp{\numexpr 25-#1\relax}%
-  \bk@setstate{\the\bk@tmp}{\white} %%% Color stones defined before %%%
+  \bk@setstate{\the\bk@tmp}{\white}%
+  %%% Color stones defined before %%%
   \bk@setcount{\the\bk@tmp}{#2}%
   \ignorespaces
 }
@@ -218,11 +219,13 @@
 	\bk@maxstonesfalse
 	\ifnumcomp{\y}{=}{0}
 	{\global\let\bk@stonetextcolor\black
-	 \gdef\bk@stonecolor{\white} %%% Color stones defined before %%%
+	 \gdef\bk@stonecolor{\white} 
+	 %%% Color stones defined before %%%
 	 \gdef\bk@barpos{whitebar}
 	 \gdef\bk@orient{below}}
 	{\global\let\bk@stonetextcolor\white
-	 \gdef\bk@stonecolor{\black} %%% Color stones defined before %%%
+	 \gdef\bk@stonecolor{\black} 
+	 %%% Color stones defined before %%%
 	 \gdef\bk@barpos{blackbar}
 	 \gdef\bk@orient{above}}
 	\ifnumcomp{\bk@barcount}{>}{3}
@@ -267,15 +270,19 @@
 % command to display the dice
 \newcommand*{\bk@whitedice}[2]{%
 	\node at (white dice) [left=0pt] (dice) 
-		{\drawdie[dot color=\black,line color=\black,dice color=\white]{#1}}; %%% Color stones defined before %%%
+		{\drawdie[dot color=\black,line color=\black,dice color=\white]{#1}}; 
+		%%% Color stones defined before %%%
 	\node at (white dice) [right=0pt] (dice) 
-		{\drawdie[dot color=\black,line color=\black,dice color=\white]{#2}}; %%% Color stones defined before %%%
+		{\drawdie[dot color=\black,line color=\black,dice color=\white]{#2}}; 
+		%%% Color stones defined before %%%
 }
 \newcommand*{\bk@blackdice}[2]{%
 	\node at (black dice) [left=0pt] (dice) 
-		{\drawdie[dot color=\white,line color=\black,dice color=\black]{#1}}; %%% Color stones defined before %%%
+		{\drawdie[dot color=\white,line color=\black,dice color=\black]{#1}}; 
+		%%% Color stones defined before %%%
 	\node at (black dice) [right=0pt] (dice) 
-		{\drawdie[dot color=\white,line color=\black,dice color=\black]{#1}}; %%% Color stones defined before %%%
+		{\drawdie[dot color=\white,line color=\black,dice color=\black]{#2}}; 
+		%%% Color stones defined before %%%
 }
 % This is an internal command to parse a dice role in the form (nm)
 % into two separate parts so that the dice can be generated
