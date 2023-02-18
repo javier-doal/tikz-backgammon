@@ -1,0 +1,108 @@
+%% LyX 2.3.7 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[10pt,spanish]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage[a6paper]{geometry}
+\geometry{verbose,tmargin=0.7cm,bmargin=0.8cm,lmargin=0.7cm,rmargin=0.7cm,footskip=0.5cm}
+\pagestyle{plain}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{0}
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{color}
+\usepackage{babel}
+\addto\shorthandsspanish{\spanishdeactivate{~<>}}
+
+\usepackage{esint}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=true,pdfborder={0 0 0},pdfborderstyle={},backref=false,colorlinks=true]
+ {hyperref}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{geometry}
+\usepackage{times}
+\usepackage{multicol}
+\usepackage{fancybox}
+\usepackage{calc}
+\usepackage{units}
+\usepackage{tikz-backgammon}
+\renewcommand*{\boardblack}{red}     % \newcommand*{\boardblack}{brown}
+\renewcommand*{\boardwhite}{yellow}  % \newcommand*{\boardwhite}{olive!50}
+\renewcommand*{\barcolor}{cyan}      % \newcommand*{\barcolor}{brown}
+\renewcommand*{\black}{blue}     % fichas
+\renewcommand*{\white}{green!25}     % fichas
+
+\makeatother
+
+\begin{document}
+Pruebas de colores
+
+\begin{center}
+\resizebox{!}{3cm}{
+	\double{neutral}{0}
+	%\double{black}{2}
+	%\double{white}{4}
+	% 
+	\onbar{white}{1} % ficha blanca en barra
+	\onbar{black}{1}
+	% las casillas se deben contar desde el punto de vista de cada jugador
+	% \whitepoint{n}{0} vacio casilla blancas, para borrar las del anterior tablero
+	% no se puede poner \whitepoint{01}{0}  da error el 0 delante del n�mero
+	\whitepoint{1}{0}   \whitepoint{2}{2}   \whitepoint{3}{2} 
+	\whitepoint{4}{0}   \whitepoint{5}{2}   \whitepoint{6}{2} 
+	\whitepoint{7}{2}   \whitepoint{8}{0}   \whitepoint{9}{0} 
+	\whitepoint{10}{0}  \whitepoint{11}{0}  \whitepoint{12}{0} 
+	\whitepoint{13}{2}  \whitepoint{14}{0}  \whitepoint{15}{0} 
+	\whitepoint{16}{0}  \whitepoint{17}{0}  \whitepoint{18}{0} 
+	\whitepoint{19}{0}  \whitepoint{20}{0}  \whitepoint{21}{2}
+	\whitepoint{22}{0}  \whitepoint{23}{0}  \whitepoint{24}{0} 
+	% No escribir las casillas ya ocupadas por el blanco
+	\blackpoint{3}{2}   \blackpoint{5}{2}   \blackpoint{6}{3}
+	\blackpoint{7}{2}   \blackpoint{8}{2}   
+	\blackpoint{13}{2}  \blackpoint{21}{1} 
+	%
+	\blackroll{23} 
+	%\whiteroll{56}
+	% 
+	\blackboard % muestra tablero desde punto de vista del negro
+	%\whiteboard  % del blanco
+}
+\end{center}
+
+Texto 
+
+\begin{center}
+\resizebox{!}{3cm}{
+	%\double{neutral}{0}
+	\double{black}{2}
+	%\double{white}{4}
+	% 
+	%\blackroll{23} 
+	\whiteroll{56}
+	% 
+	%\blackboard % muestra tablero desde punto de vista del negro
+	\whiteboard  % del blanco
+}
+\end{center}
+
+Texto
+
+\begin{center}
+\resizebox{!}{3cm}{
+	%\double{neutral}{0}
+	%\double{black}{2}
+	\double{white}{4}
+	% 
+	%\blackroll{23} 
+	%\whiteroll{56}
+	% 
+	\blackboard % muestra tablero desde punto de vista del negro
+	%\whiteboard  % del blanco
+}
+\end{center}
+
+Texto
+\end{document}
