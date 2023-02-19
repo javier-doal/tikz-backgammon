@@ -58,11 +58,12 @@
 				0/.style={fill=\boardwhite},
 				stone/.style={transform shape,draw=black,circle,minimum size=3*\defaultxy,inner sep=0pt,font={\sffamily},text={\bk@stonetextcolor}},
 				sans/.style={transform shape,font={\sffamily},inner sep=0pt,outer sep=0pt},
-				white double/.style={line color=\black,dice color=\white,text=\black},
-				black double/.style={line color=\black,dice color=\black,text=\white},
-				neutral double/.style={line color=\boardblack,dice color=\barcolor,text=\boardwhite},
+				white double/.style={line color=\black,text=\black},
+				black double/.style={dice color=\black,text=\white},
+				neutral double/.style={dice color=\barcolor,text=\boardwhite},
 				}
 % CAMBIO %COLORES %%%%%%%
+
 
 % initialization
 % These should be made key values
@@ -268,15 +269,15 @@
 % command to display the dice
 \newcommand*{\bk@whitedice}[2]{%
 	\node at (white dice) [left=0pt] (dice) 
-		{\drawdie[dot color=\black,line color=\black,dice color=\white]{#1}}; % cambio
+		{\drawdie[dot color=\black,line color=\black]{#1}}; % cambio
 	\node at (white dice) [right=0pt] (dice) 
-		{\drawdie[dot color=\black,line color=\black,dice color=\white]{#2}}; % cambio
+		{\drawdie[dot color=\black,line color=\black]{#2}}; % cambio
 }
 \newcommand*{\bk@blackdice}[2]{%
 	\node at (black dice) [left=0pt] (dice) 
-		{\drawdie[dot color=\white,line color=\black,dice color=\black]{#1}}; % cambio
+		{\drawdie[dot color=\white,dice color=\black]{#1}}; % cambio
 	\node at (black dice) [right=0pt] (dice) 
-		{\drawdie[dot color=\white,line color=\black,dice color=\black]{#2}}; % cambio
+		{\drawdie[dot color=\white,dice color=\black]{#2}}; % cambio
 }
 % This is an internal command to parse a dice role in the form (nm)
 % into two separate parts so that the dice can be generated
