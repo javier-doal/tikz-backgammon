@@ -110,6 +110,107 @@ Mostrando diversos Diagramas de Backgammon
 \end_layout
 
 \begin_layout Standard
+Se han creado una serie de comandos para representar los diagramas de Backgammon
+, el comando indica en la primera parte del como se numeraran las casillas,
+ si desde el punto de vista del blanco (
+\emph on
+
+\backslash
+whiteboardXX
+\emph default
+) o desde el negro (
+\emph on
+
+\backslash
+blackboardXX
+\emph default
+).
+ Las dos últimas letras del comando indican donde se colocará la casa interior
+ del jugador correspondiente (
+\emph on
+U
+\emph default
+ ó 
+\emph on
+D
+\emph default
+: arriba o abajo y 
+\emph on
+R
+\emph default
+ ó 
+\emph on
+L
+\emph default
+: derecha o izquierda.
+ Obteniéndose los comandos:
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+
+\backslash
+blackboardDL
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+
+\backslash
+blackboardDR
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+
+\backslash
+blackboardUL
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+
+\backslash
+blackboardUR
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+
+\backslash
+whiteboardDL
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+
+\backslash
+whiteboardDR
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+
+\backslash
+whiteboardUL
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+
+\backslash
+whiteboardUR
+\end_layout
+
+\begin_layout Standard
 Uso comando 
 \emph on
 
@@ -130,7 +231,7 @@ L
 
 \begin_layout Standard
 
-\size footnotesize
+\size small
 Nota: En el preámbulo del documento he cambiado los colores de las casillas
  del negro a rojo 
 \emph on
@@ -154,7 +255,7 @@ boardwhite}{yellow}
 \backslash
 renewcommand*{
 \backslash
-barcolor}{cian}.
+barcolor}{cyan}.
 \end_layout
 
 \begin_layout Standard
@@ -848,7 +949,7 @@ R
 
 \begin_layout Standard
 
-\size footnotesize
+\size small
 Además he cambiado las casillas negras a color azul con el comando 
 \emph on
 
@@ -960,7 +1061,7 @@ Y por fin el diagrama que yo suelo utilizar (y por él que me metí en este
 
 \begin_layout Standard
 
-\size footnotesize
+\size small
 Además he cambiado el color de las fichas negras a morado con el comando
  
 \emph on
@@ -1130,15 +1231,239 @@ end{center}
 \end_layout
 
 \begin_layout Standard
+Uso comando 
+\emph on
 
-\size small
-Faltaría implementar la casa interior del blanco abajo a la izquierda, pero
- de momento no lo he hecho (no creo necesitarlo).
+\backslash
+whiteboardDL
+\emph default
+ (muestra numeración casillas desde el punto de vista del blanco) con la
+ casa interior del blanco abajo 
+\emph on
+D
+\emph default
+ a la izquierda 
+\emph on
+L
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*{
+\backslash
+black}{black}     % cambio color fichas negras 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*{
+\backslash
+white}{white}     % cambio color fichas blancas
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{!}{4cm}{
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+double{white}{4}
+\end_layout
+
+\begin_layout Plain Layout
+
+	% 
+\end_layout
+
+\begin_layout Plain Layout
+
+	%
+\backslash
+blackroll{23} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+whiteroll{56}
+\end_layout
+
+\begin_layout Plain Layout
+
+	% 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+boardcaption{casa interior del blanco abajo a la izquierda}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+whiteboardDL  % del blanco
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uso comando 
+\emph on
+
+\backslash
+blackboardUL
+\emph default
+ (muestra numeración casillas desde el punto de vista del blanco) con la
+ casa interior del blanco abajo 
+\emph on
+D
+\emph default
+ a la izquierda 
+\emph on
+L
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*{
+\backslash
+black}{black}     % cambio color fichas negras 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*{
+\backslash
+barcolor}{cyan}  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{!}{4cm}{
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+double{black}{2}
+\end_layout
+
+\begin_layout Plain Layout
+
+	% 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+blackroll{23} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	%
+\backslash
+whiteroll{56}
+\end_layout
+
+\begin_layout Plain Layout
+
+	% 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+boardcaption{casa interior del blanco abajo a la izquierda}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+blackboardUL  % del blanco
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Después de todas estas pruebas, no se ha roto nada.
- Y LyX sigue compilando el PDF correctamente.
+ Y \SpecialChar LyX
+ sigue compilando el PDF correctamente.
  
 \end_layout
 
@@ -1147,21 +1472,27 @@ He tenido que modificar los archivos de package:
 \end_layout
 
 \begin_layout Itemize
+
+\emph on
 tikz-backgammon-dice.sty
 \end_layout
 
 \begin_layout Itemize
+
+\emph on
 tikz-backgammon.sty
 \end_layout
 
 \begin_layout Standard
-El documento lo he creado en LyX usando en el preambulo el comando 
+El documento lo he creado en \SpecialChar LyX
+ usando en el preámbulo el comando 
 \emph on
 
 \backslash
 usepackage{tikz-backgammon}
 \emph default
-, e insertando sendas cajas de Código TeX para elaborar los diagramas.
+, e insertando sendas cajas de Código \SpecialChar TeX
+ para elaborar los diagramas.
 \end_layout
 
 \end_body

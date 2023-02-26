@@ -21,6 +21,12 @@
  {hyperref}
 
 \makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\providecommand{\LyX}{\texorpdfstring%
+  {L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
+  {LyX}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
 \usepackage{times}
 \usepackage{multicol}
@@ -41,14 +47,31 @@
 
 \subsection*{Mostrando diversos Diagramas de Backgammon}
 
+Se han creado una serie de comandos para representar los diagramas
+de Backgammon, el comando indica en la primera parte del como se numeraran
+las casillas, si desde el punto de vista del blanco (\emph{\textbackslash whiteboardXX})
+o desde el negro (\emph{\textbackslash blackboardXX}). Las dos últimas
+letras del comando indican donde se colocará la casa interior del
+jugador correspondiente (\emph{U} ó \emph{D}: arriba o abajo y \emph{R}
+ó \emph{L}: derecha o izquierda. Obteniéndose los comandos:
+\begin{itemize}
+\item \emph{\textbackslash blackboardDL}
+\item \emph{\textbackslash blackboardDR}
+\item \emph{\textbackslash blackboardUL}
+\item \emph{\textbackslash blackboardUR}
+\item \emph{\textbackslash whiteboardDL}
+\item \emph{\textbackslash whiteboardDR}
+\item \emph{\textbackslash whiteboardUL}
+\item \emph{\textbackslash whiteboardUR}
+\end{itemize}
 Uso comando \emph{\textbackslash blackboardDL} (números casillas
 desde el punto de vista del negro) la casa interior del negro abajo
 \emph{D} a la izquierda \emph{L}.
 
-{\footnotesize{}Nota: En el preámbulo del documento he cambiado los
-colores de las casillas del negro a rojo }\emph{\footnotesize{}\textbackslash renewcommand{*}\{\textbackslash boardblack\}\{red\}}{\footnotesize{},
-las casillas del blanco a amarillo con }\emph{\footnotesize{}\textbackslash renewcommand{*}\{\textbackslash boardwhite\}\{yellow\}}{\footnotesize{},
-y la barra a color cían con }\emph{\footnotesize{}\textbackslash renewcommand{*}\{\textbackslash barcolor\}\{cian\}.}{\footnotesize\par}
+{\small{}Nota: En el preámbulo del documento he cambiado los colores
+de las casillas del negro a rojo }\emph{\small{}\textbackslash renewcommand{*}\{\textbackslash boardblack\}\{red\}}{\small{},
+las casillas del blanco a amarillo con }\emph{\small{}\textbackslash renewcommand{*}\{\textbackslash boardwhite\}\{yellow\}}{\small{},
+y la barra a color cían con }\emph{\small{}\textbackslash renewcommand{*}\{\textbackslash barcolor\}\{cyan\}.}{\small\par}
 
 \begin{center}
 \resizebox{!}{4cm}{
@@ -157,9 +180,9 @@ Uso comando \emph{\textbackslash blackboardUR} (muestra numeración
 casillas desde el punto de vista del negro) con la casa interior del
 negro arriba \emph{U} a la derecha \emph{R} 
 
-{\footnotesize{}Además he cambiado las casillas negras a color azul
-con el comando }\emph{\footnotesize{}\textbackslash renewcommand{*}\{\textbackslash boardblack\}\{blue\},
-y las casillas blancas a blanco con \textbackslash renewcommand{*}\{\textbackslash boardwhite\}\{white\} }{\footnotesize\par}
+{\small{}Además he cambiado las casillas negras a color azul con el
+comando }\emph{\small{}\textbackslash renewcommand{*}\{\textbackslash boardblack\}\{blue\},
+y las casillas blancas a blanco con \textbackslash renewcommand{*}\{\textbackslash boardwhite\}\{white\} }{\small\par}
 
 \renewcommand*{\boardblack}{blue}  
 \renewcommand*{\boardwhite}{white}  
@@ -177,11 +200,11 @@ y las casillas blancas a blanco con \textbackslash renewcommand{*}\{\textbacksla
 Y por fin el diagrama que yo suelo utilizar (y por él que me metí
 en este lio).
 
-{\footnotesize{}Además he cambiado el color de las fichas negras a
-morado con el comando }\emph{\footnotesize{}\textbackslash renewcommand{*}\{\textbackslash black\}\{purple\}}{\footnotesize{};
-el color de las fichas blancas a naranja con }\emph{\footnotesize{}\textbackslash renewcommand{*}\{\textbackslash white\}\{orange\}}{\footnotesize{},
-las casillas del blanco a amarillo con }\emph{\footnotesize{}\textbackslash renewcommand{*}\{\textbackslash boardwhite\}\{yellow\}}{\footnotesize{},
-y la barra a marrón con }\emph{\footnotesize{}\textbackslash renewcommand{*}\{\textbackslash barcolor\}\{brown\}. }{\footnotesize\par}
+{\small{}Además he cambiado el color de las fichas negras a morado
+con el comando }\emph{\small{}\textbackslash renewcommand{*}\{\textbackslash black\}\{purple\}}{\small{};
+el color de las fichas blancas a naranja con }\emph{\small{}\textbackslash renewcommand{*}\{\textbackslash white\}\{orange\}}{\small{},
+las casillas del blanco a amarillo con }\emph{\small{}\textbackslash renewcommand{*}\{\textbackslash boardwhite\}\{yellow\}}{\small{},
+y la barra a marrón con }\emph{\small{}\textbackslash renewcommand{*}\{\textbackslash barcolor\}\{brown\}. }{\small\par}
 
 Uso comando \emph{\textbackslash whiteboardDR} (muestra numeración
 casillas desde el punto de vista del blanco) con la casa interior
@@ -203,18 +226,51 @@ del blanco abajo \emph{D} a la derecha \emph{R}
 }
 \end{center}
 
-{\small{}Faltaría implementar la casa interior del blanco abajo a
-la izquierda, pero de momento no lo he hecho (no creo necesitarlo).}{\small\par}
+Uso comando \emph{\textbackslash whiteboardDL} (muestra numeración
+casillas desde el punto de vista del blanco) con la casa interior
+del blanco abajo \emph{D} a la izquierda \emph{L}
 
-Después de todas estas pruebas, no se ha roto nada. Y LyX sigue compilando
-el PDF correctamente. 
+\renewcommand*{\black}{black}     % cambio color fichas negras 
+\renewcommand*{\white}{white}     % cambio color fichas blancas
+\begin{center}
+\resizebox{!}{4cm}{
+	\double{white}{4}
+	% 
+	%\blackroll{23} 
+	\whiteroll{56}
+	% 
+	\boardcaption{casa interior del blanco abajo a la izquierda}
+	\whiteboardDL  % del blanco
+}
+\end{center}
+
+Uso comando \emph{\textbackslash blackboardUL} (muestra numeración
+casillas desde el punto de vista del blanco) con la casa interior
+del blanco abajo \emph{D} a la izquierda \emph{L}
+
+\renewcommand*{\black}{black}     % cambio color fichas negras 
+\renewcommand*{\barcolor}{cyan}  
+\begin{center}
+\resizebox{!}{4cm}{
+	\double{black}{2}
+	% 
+	\blackroll{23} 
+	%\whiteroll{56}
+	% 
+	\boardcaption{casa interior del blanco abajo a la izquierda}
+	\blackboardUL  % del blanco
+}
+\end{center}
+
+Después de todas estas pruebas, no se ha roto nada. Y \LyX{} sigue
+compilando el PDF correctamente. 
 
 He tenido que modificar los archivos de package:
 \begin{itemize}
-\item tikz-backgammon-dice.sty
-\item tikz-backgammon.sty
+\item \emph{tikz-backgammon-dice.sty}
+\item \emph{tikz-backgammon.sty}
 \end{itemize}
-El documento lo he creado en LyX usando en el preambulo el comando
+El documento lo he creado en \LyX{} usando en el preámbulo el comando
 \emph{\textbackslash usepackage\{tikz-backgammon\}}, e insertando
-sendas cajas de Código TeX para elaborar los diagramas.
+sendas cajas de Código \TeX{} para elaborar los diagramas.
 \end{document}

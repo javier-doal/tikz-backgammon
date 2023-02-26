@@ -261,6 +261,49 @@
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
+%%%%%%%%%%% TABLERO ROTADO  %%%%%%%%%% blanco sale por abajo hacia la izquierda %%%%%%%%%%
+
+\newcommand{\bk@drawboardT}{%
+    \draw[line width=4pt] (0,0) -- (0,32) -- (39,32) -- (39,0) -- cycle;
+    \foreach \x in {1,...,6}{
+    		\let\bk@nodename\x
+		\node[sans] (\bk@nodename) at (\bk@left+\x*3,\bk@downstart)  {\bk@nodelabelW}; %
+		\pgfmathparse{int(\x+6)}\let\bk@nodename\pgfmathresult
+		\node[sans] (\bk@nodename) at (\bk@right+\x*3-21,\bk@downstart)  {\bk@nodelabelW}; %+3
+		\pgfmathparse{int(\x+12)}\let\bk@nodename\pgfmathresult
+		\node[sans] (\bk@nodename) at (\bk@right-\x*3,\bk@upstart)  {\bk@nodelabelW};
+		\pgfmathparse{int(\x+18)}\let\bk@nodename\pgfmathresult
+		 \node[sans] (\bk@nodename) at (\bk@left-\x*3+21,\bk@upstart)  {\bk@nodelabelW};
+    }
+% now draw the first half points, sólo dibuja triaángulos tablero
+  \foreach \x in {0,3,...,15}
+     \bk@dpoint;
+  \foreach \x in {0,3,...,15}
+     \bk@upoint;
+% draw the bar and set the anchors for bar and the doubling cube and dice rolls
+  \draw[very thick,fill=\barcolor](18,0) -- (18,32) -- (21,32) -- (21,0) -- cycle;
+  \coordinate (barcenter) at (19.5,14);
+  \coordinate (whitebar) at (19.5,28);
+  \coordinate (blackbar) at (19.5,4);
+  \coordinate (black double) at (42, 4);
+  \coordinate (white double) at (42, 28);
+  \coordinate (neutral double) at (42,16);
+  \coordinate (black dice) at (9,16);
+  \coordinate (white dice) at (30,16);
+  \coordinate (caption) at (19.5,-4);
+  \coordinate (offblack) at (-4,4);
+  \coordinate (offwhite) at (-4,28);
+% draw the other half of the points %%% colores cambiados %%%
+  \foreach \x in {21,24,...,36}
+     \bk@dpointr;
+  \foreach \x in {21,24,...,36}
+     \bk@upointr;
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 %  commands to place markers on a point and set its state
 %  for users to make arbitrary board configurations
 
@@ -463,6 +506,16 @@
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%% TABLERO ROTADO  %%%%%%%%%% blanco sale por abajo hacia la izquierda %%%%%%%%%%
+% user command to draw a blank board
+\newcommand*{\blankboardT}[1][]{%
+	\double{neutral}{64}
+	\begin{tikzpicture}[x=\defaultxy,y=\defaultxy,#1]
+		\bk@drawboardT
+	\end{tikzpicture}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % user commands to set the caption for a board
 \newcommand{\boardcaptionformat}[1]{\gdef\bk@captionformat{#1}}
 \boardcaptionformat{}  
@@ -587,6 +640,28 @@
   \par\vspace{\betweengameskip}
   \begin{tikzpicture}[x=\defaultxy,y=\defaultxy,#1]
 		\bk@drawboardW
+		\foreach \x in {1,...,24}{
+ 			\bk@placepointW{\x}{\the\csname c@bk@pt\x\endcsname}}  
+ 		\bk@placedoubleW 
+		\bk@placebarW
+		\ifbk@displaydice
+			\csname bk@\bk@dicestate dice\endcsname{\bk@dice@one}{\bk@dice@two}\fi
+		\node[align=center,anchor=north,inner sep=0pt] at (caption)
+				{\bk@boardcaption};
+	\end{tikzpicture}
+% after drawing the board we reset the caption and the dice display
+	\bk@displaydicefalse
+	\boardcaption{}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%% TABLERO simetrico  %%%%%%%%%% blanco sale por abajo hacia la izquiereda %%%%%%%%%%
+\newcommand*\whiteboardDL{\bk@blacktrue\bk@displayboardT} %\bk@blackfalse\
+\newcommand*\blackboardUL{\bk@blackfalse\bk@displayboardT}  %\bk@blacktrue\
+\newcommand{\bk@displayboardT}[1][]{%
+  \par\vspace{\betweengameskip}
+  \begin{tikzpicture}[x=\defaultxy,y=\defaultxy,#1]
+		\bk@drawboardT
 		\foreach \x in {1,...,24}{
  			\bk@placepointW{\x}{\the\csname c@bk@pt\x\endcsname}}  
  		\bk@placedoubleW 
