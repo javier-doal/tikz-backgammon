@@ -1,0 +1,1168 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{times}
+\usepackage{multicol}
+\usepackage{fancybox}
+\usepackage{calc}
+\usepackage{units}
+%\usepackage{rotating}
+\usepackage{tikz-backgammon}
+\renewcommand*{\boardblack}{red}     % \newcommand*{\boardblack}{brown}
+\renewcommand*{\boardwhite}{yellow}  % \newcommand*{\boardwhite}{olive!50}
+\renewcommand*{\barcolor}{cyan}      % \newcommand*{\barcolor}{brown}
+% \renewcommand*{\black}{blue}     % fichas
+% \renewcommand*{\white}{green!25}     % fichas
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package babel
+\inputencoding auto
+\fontencoding T1
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 10
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize a5paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 2
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1.5cm
+\topmargin 1.5cm
+\rightmargin 1.5cm
+\bottommargin 1.5cm
+\footskip 0.5cm
+\secnumdepth 2
+\tocdepth 0
+\paragraph_separation skip
+\defskip medskip
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 2
+\papersides 1
+\paperpagestyle plain
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Subsection*
+Mostrando diversos Diagramas de Backgammon
+\end_layout
+
+\begin_layout Standard
+Uso comando 
+\emph on
+
+\backslash
+blackboardDL
+\emph default
+ (números casillas desde el punto de vista del negro) la casa interior del
+ negro abajo 
+\emph on
+D
+\emph default
+ a la izquierda 
+\emph on
+L
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+Nota: En el preámbulo del documento he cambiado los colores de las casillas
+ del negro a rojo 
+\emph on
+
+\backslash
+renewcommand*{
+\backslash
+boardblack}{red}
+\emph default
+, las casillas del blanco a amarillo con 
+\emph on
+
+\backslash
+renewcommand*{
+\backslash
+boardwhite}{yellow}
+\emph default
+, y la barra a color cían con 
+\emph on
+
+\backslash
+renewcommand*{
+\backslash
+barcolor}{cian}.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{!}{4cm}{
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+double{neutral}{0}
+\end_layout
+
+\begin_layout Plain Layout
+
+	% 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+onbar{white}{1} % ficha blanca en barra
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+onbar{black}{1}
+\end_layout
+
+\begin_layout Plain Layout
+
+	% las casillas se deben contar desde el punto de vista de cada jugador
+\end_layout
+
+\begin_layout Plain Layout
+
+	% 
+\backslash
+whitepoint{n}{0} vacio casilla blancas, para borrar las del anterior tablero
+\end_layout
+
+\begin_layout Plain Layout
+
+	% no se puede poner 
+\backslash
+whitepoint{01}{0}  da error el 0 delante del número
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+whitepoint{1}{0}   
+\backslash
+whitepoint{2}{2}   
+\backslash
+whitepoint{3}{2} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+whitepoint{4}{0}   
+\backslash
+whitepoint{5}{2}   
+\backslash
+whitepoint{6}{2} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+whitepoint{7}{2}   
+\backslash
+whitepoint{8}{0}   
+\backslash
+whitepoint{9}{0} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+whitepoint{10}{0}  
+\backslash
+whitepoint{11}{0}  
+\backslash
+whitepoint{12}{0} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+whitepoint{13}{2}  
+\backslash
+whitepoint{14}{0}  
+\backslash
+whitepoint{15}{0} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+whitepoint{16}{0}  
+\backslash
+whitepoint{17}{0}  
+\backslash
+whitepoint{18}{0} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+whitepoint{19}{0}  
+\backslash
+whitepoint{20}{0}  
+\backslash
+whitepoint{21}{2}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+whitepoint{22}{0}  
+\backslash
+whitepoint{23}{0}  
+\backslash
+whitepoint{24}{0} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	% No escribir las casillas ya ocupadas por el blanco
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+blackpoint{3}{2}   
+\backslash
+blackpoint{5}{2}   
+\backslash
+blackpoint{6}{3}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+blackpoint{7}{2}   
+\backslash
+blackpoint{8}{2}   
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+blackpoint{13}{2}  
+\backslash
+blackpoint{21}{1} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	%
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+blackroll{23} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	% 
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+boardcaption{casa interior del negro abajo a la izquierda}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+blackboardDL % 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uso comando 
+\emph on
+
+\backslash
+blackboardDR
+\emph default
+ (números casillas desde el punto de vista del negro), cambia la posición
+ de la casa interior del negro al lado derecho 
+\emph on
+R
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{!}{4cm}{
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+blackroll{23} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	% 
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+boardcaption{casa interior del negro abajo a la derecha}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+blackboardDR  % del blanco
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uso comando 
+\emph on
+
+\backslash
+whiteboardUL
+\emph default
+ (números casillas desde el punto de vista del blanco), con la casa interior
+ del blanco arriba 
+\emph on
+U
+\emph default
+ a la izquierda 
+\emph on
+L
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{!}{4cm}{
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+double{black}{2}
+\end_layout
+
+\begin_layout Plain Layout
+
+	% 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+whiteroll{56}
+\end_layout
+
+\begin_layout Plain Layout
+
+	%     
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+boardcaption{casa interior del negro abajo a la izquierda}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+whiteboardUL 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uso comando 
+\emph on
+
+\backslash
+whiteboardUR
+\emph default
+ (números casillas desde el punto de vista del blanco) con casa interior
+ del blanco arriba a la derecha
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{!}{4cm}{
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+double{black}{2}
+\end_layout
+
+\begin_layout Plain Layout
+
+	% 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+whiteroll{56}
+\end_layout
+
+\begin_layout Plain Layout
+
+	% 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+boardcaption{casa interior del negro abajo a la derecha}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+whiteboardUR  
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uso comando 
+\emph on
+
+\backslash
+whiteboardUL
+\emph default
+ (números casillas desde el punto de vista del blanco) con casa interior
+ del blanco arriba 
+\emph on
+U
+\emph default
+ a la izquierda 
+\emph on
+L
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{!}{4cm}{
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+double{black}{2}
+\end_layout
+
+\begin_layout Plain Layout
+
+	% 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+blackroll{23} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	%     
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+boardcaption{casa interior del negro abajo a la izquierda}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+whiteboardUL 
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uso comando 
+\emph on
+
+\backslash
+whiteboardUR
+\emph default
+ (números casillas desde el punto de vista del blanco) casa interior del
+ blanco arriba 
+\emph on
+U
+\emph default
+ a la derecha 
+\emph on
+R
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{!}{4cm}{
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+double{black}{2}
+\end_layout
+
+\begin_layout Plain Layout
+
+	% 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+blackroll{23} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	%
+\backslash
+whiteroll{56}
+\end_layout
+
+\begin_layout Plain Layout
+
+	% 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+boardcaption{casa interior del negro abajo a la derecha}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+whiteboardUR
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uso comando 
+\emph on
+
+\backslash
+blackboardUR
+\emph default
+ (muestra numeración casillas desde el punto de vista del negro) con la
+ casa interior del negro arriba 
+\emph on
+U
+\emph default
+ a la derecha 
+\emph on
+R
+\emph default
+ 
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+Además he cambiado las casillas negras a color azul con el comando 
+\emph on
+
+\backslash
+renewcommand*{
+\backslash
+boardblack}{blue}, y las casillas blancas a blanco con 
+\backslash
+renewcommand*{
+\backslash
+boardwhite}{white} 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*{
+\backslash
+boardblack}{blue}  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*{
+\backslash
+boardwhite}{white}  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{!}{4cm}{
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+double{white}{4}
+\end_layout
+
+\begin_layout Plain Layout
+
+	% 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+blackroll{23} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	% 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+boardcaption{casa interior del blanco abajo a la derecha}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+blackboardUR % 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y por fin el diagrama que yo suelo utilizar (y por él que me metí en este
+ lio).
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+Además he cambiado el color de las fichas negras a morado con el comando
+ 
+\emph on
+
+\backslash
+renewcommand*{
+\backslash
+black}{purple}
+\emph default
+; el color de las fichas blancas a naranja con 
+\emph on
+
+\backslash
+renewcommand*{
+\backslash
+white}{orange}
+\emph default
+, las casillas del blanco a amarillo con 
+\emph on
+
+\backslash
+renewcommand*{
+\backslash
+boardwhite}{yellow}
+\emph default
+, y la barra a marrón con 
+\emph on
+
+\backslash
+renewcommand*{
+\backslash
+barcolor}{brown}.
+ 
+\end_layout
+
+\begin_layout Standard
+Uso comando 
+\emph on
+
+\backslash
+whiteboardDR
+\emph default
+ (muestra numeración casillas desde el punto de vista del blanco) con la
+ casa interior del blanco abajo 
+\emph on
+D
+\emph default
+ a la derecha 
+\emph on
+R
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*{
+\backslash
+boardwhite}{yellow}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*{
+\backslash
+barcolor}{brown}  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*{
+\backslash
+black}{purple}     % cambio color fichas negras 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*{
+\backslash
+white}{orange}     % cambio color fichas blancas
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{!}{4cm}{
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+double{white}{4}
+\end_layout
+
+\begin_layout Plain Layout
+
+	% 
+\end_layout
+
+\begin_layout Plain Layout
+
+	%
+\backslash
+blackroll{23} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+whiteroll{56}
+\end_layout
+
+\begin_layout Plain Layout
+
+	% 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+boardcaption{casa interior del blanco abajo a la derecha}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+whiteboardDR  % del blanco
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size small
+Faltaría implementar la casa interior del blanco abajo a la izquierda, pero
+ de momento no lo he hecho (no creo necesitarlo).
+\end_layout
+
+\begin_layout Standard
+Después de todas estas pruebas, no se ha roto nada.
+ Y LyX sigue compilando el PDF correctamente.
+ 
+\end_layout
+
+\begin_layout Standard
+He tenido que modificar los archivos de package:
+\end_layout
+
+\begin_layout Itemize
+tikz-backgammon-dice.sty
+\end_layout
+
+\begin_layout Itemize
+tikz-backgammon.sty
+\end_layout
+
+\begin_layout Standard
+El documento lo he creado en LyX usando en el preambulo el comando 
+\emph on
+
+\backslash
+usepackage{tikz-backgammon}
+\emph default
+, e insertando sendas cajas de Código TeX para elaborar los diagramas.
+\end_layout
+
+\end_body
+\end_document
