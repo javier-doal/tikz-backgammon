@@ -1,6 +1,6 @@
 %% LyX 2.3.7 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
-\documentclass[10pt,spanish]{article}
+\documentclass[10pt,twocolumn,spanish]{article}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
 \usepackage[a5paper]{geometry}
@@ -27,29 +27,38 @@
 \usepackage{fancybox}
 \usepackage{calc}
 \usepackage{units}
+%\usepackage{rotating}
 \usepackage{tikz-backgammon}
 \renewcommand*{\boardblack}{red}     % \newcommand*{\boardblack}{brown}
 \renewcommand*{\boardwhite}{yellow}  % \newcommand*{\boardwhite}{olive!50}
 \renewcommand*{\barcolor}{cyan}      % \newcommand*{\barcolor}{brown}
-\renewcommand*{\black}{blue}     % fichas
-\renewcommand*{\white}{green!25}     % fichas
+% \renewcommand*{\black}{blue}     % fichas
+% \renewcommand*{\white}{green!25}     % fichas
 
 \makeatother
 
 \begin{document}
-Pruebas de colores
+
+\subsection*{Mostrando diversos Diagramas de Backgammon}
+
+Uso comando \emph{\textbackslash blackboardDL} (números casillas
+desde el punto de vista del negro) la casa interior del negro abajo
+\emph{D} a la izquierda \emph{L}.
+
+{\footnotesize{}Nota: En el preámbulo del documento he cambiado los
+colores de las casillas del negro a rojo }\emph{\footnotesize{}\textbackslash renewcommand{*}\{\textbackslash boardblack\}\{red\}}{\footnotesize{},
+las casillas del blanco a amarillo con }\emph{\footnotesize{}\textbackslash renewcommand{*}\{\textbackslash boardwhite\}\{yellow\}}{\footnotesize{},
+y la barra a color cían con }\emph{\footnotesize{}\textbackslash renewcommand{*}\{\textbackslash barcolor\}\{cian\}.}{\footnotesize\par}
 
 \begin{center}
 \resizebox{!}{4cm}{
 	\double{neutral}{0}
-	%\double{black}{2}
-	%\double{white}{4}
 	% 
 	\onbar{white}{1} % ficha blanca en barra
 	\onbar{black}{1}
 	% las casillas se deben contar desde el punto de vista de cada jugador
 	% \whitepoint{n}{0} vacio casilla blancas, para borrar las del anterior tablero
-	% no se puede poner \whitepoint{01}{0}  da error el 0 delante del nï¿½mero
+	% no se puede poner \whitepoint{01}{0}  da error el 0 delante del número
 	\whitepoint{1}{0}   \whitepoint{2}{2}   \whitepoint{3}{2} 
 	\whitepoint{4}{0}   \whitepoint{5}{2}   \whitepoint{6}{2} 
 	\whitepoint{7}{2}   \whitepoint{8}{0}   \whitepoint{9}{0} 
@@ -64,44 +73,148 @@ Pruebas de colores
 	\blackpoint{13}{2}  \blackpoint{21}{1} 
 	%
 	\blackroll{23} 
-	%\whiteroll{56}
 	% 
-	\blackboard % muestra tablero desde punto de vista del negro
-	%\whiteboard  % del blanco
+    \boardcaption{casa interior del negro abajo a la izquierda}
+	\blackboardDL % 
 }
 \end{center}
 
-Texto 
+Uso comando \emph{\textbackslash blackboardDR} (números casillas
+desde el punto de vista del negro), cambia la posición de la casa
+interior del negro al lado derecho \emph{R}.
 
 \begin{center}
 \resizebox{!}{4cm}{
-	%\double{neutral}{0}
+	\blackroll{23} 
+	% 
+    \boardcaption{casa interior del negro abajo a la derecha}
+	\blackboardDR  % del blanco
+}
+\end{center}
+
+Uso comando \emph{\textbackslash whiteboardUL} (números casillas
+desde el punto de vista del blanco), con la casa interior del blanco
+arriba \emph{U} a la izquierda \emph{L}
+
+\begin{center}
+\resizebox{!}{4cm}{
 	\double{black}{2}
-	%\double{white}{4}
+	% 
+	\whiteroll{56}
+	%     
+	\boardcaption{casa interior del negro abajo a la izquierda}
+	\whiteboardUL 
+}
+\end{center}
+
+Uso comando \emph{\textbackslash whiteboardUR} (números casillas
+desde el punto de vista del blanco) con casa interior del blanco arriba
+a la derecha
+
+\begin{center}
+\resizebox{!}{4cm}{
+	\double{black}{2}
+	% 
+	\whiteroll{56}
+	% 
+\boardcaption{casa interior del negro abajo a la derecha}
+	\whiteboardUR  
+}
+\end{center}
+
+Uso comando \emph{\textbackslash whiteboardUL} (números casillas
+desde el punto de vista del blanco) con casa interior del blanco arriba
+\emph{U} a la izquierda \emph{L}
+
+\begin{center}
+\resizebox{!}{4cm}{
+	\double{black}{2}
+	% 
+	\blackroll{23} 
+	%     
+	\boardcaption{casa interior del negro abajo a la izquierda}
+	\whiteboardUL 
+	}
+\end{center}
+
+Uso comando \emph{\textbackslash whiteboardUR} (números casillas
+desde el punto de vista del blanco) casa interior del blanco arriba
+\emph{U} a la derecha \emph{R}
+
+\begin{center}
+\resizebox{!}{4cm}{
+	\double{black}{2}
+	% 
+	\blackroll{23} 
+	%\whiteroll{56}
+	% 
+	\boardcaption{casa interior del negro abajo a la derecha}
+	\whiteboardUR
+}
+\end{center}
+
+Uso comando \emph{\textbackslash blackboardUR} (muestra numeración
+casillas desde el punto de vista del negro) con la casa interior del
+negro arriba \emph{U} a la derecha \emph{R} 
+
+{\footnotesize{}Además he cambiado las casillas negras a color azul
+con el comando }\emph{\footnotesize{}\textbackslash renewcommand{*}\{\textbackslash boardblack\}\{blue\},
+y las casillas blancas a blanco con \textbackslash renewcommand{*}\{\textbackslash boardwhite\}\{white\} }{\footnotesize\par}
+
+\renewcommand*{\boardblack}{blue}  
+\renewcommand*{\boardwhite}{white}  
+\begin{center}
+\resizebox{!}{4cm}{
+	\double{white}{4}
+	% 
+	\blackroll{23} 
+	% 
+	\boardcaption{casa interior del blanco abajo a la derecha}
+	\blackboardUR % 
+}
+\end{center}
+
+Y por fin el diagrama que yo suelo utilizar (y por él que me metí
+en este lio).
+
+{\footnotesize{}Además he cambiado el color de las fichas negras a
+morado con el comando }\emph{\footnotesize{}\textbackslash renewcommand{*}\{\textbackslash black\}\{purple\}}{\footnotesize{};
+el color de las fichas blancas a naranja con }\emph{\footnotesize{}\textbackslash renewcommand{*}\{\textbackslash white\}\{orange\}}{\footnotesize{},
+las casillas del blanco a amarillo con }\emph{\footnotesize{}\textbackslash renewcommand{*}\{\textbackslash boardwhite\}\{yellow\}}{\footnotesize{},
+y la barra a marrón con }\emph{\footnotesize{}\textbackslash renewcommand{*}\{\textbackslash barcolor\}\{brown\}. }{\footnotesize\par}
+
+Uso comando \emph{\textbackslash whiteboardDR} (muestra numeración
+casillas desde el punto de vista del blanco) con la casa interior
+del blanco abajo \emph{D} a la derecha \emph{R}
+
+\renewcommand*{\boardwhite}{yellow}
+\renewcommand*{\barcolor}{brown}  
+\renewcommand*{\black}{purple}     % cambio color fichas negras 
+\renewcommand*{\white}{orange}     % cambio color fichas blancas
+\begin{center}
+\resizebox{!}{4cm}{
+	\double{white}{4}
 	% 
 	%\blackroll{23} 
 	\whiteroll{56}
 	% 
-	%\blackboard % muestra tablero desde punto de vista del negro
-	\whiteboard  % del blanco
+	\boardcaption{casa interior del blanco abajo a la derecha}
+	\whiteboardDR  % del blanco
 }
 \end{center}
 
-Texto
+{\small{}Faltaría implementar la casa interior del blanco abajo a
+la izquierda, pero de momento no lo he hecho (no creo necesitarlo).}{\small\par}
 
-\begin{center}
-\resizebox{!}{4cm}{
-	%\double{neutral}{0}
-	%\double{black}{2}
-	\double{white}{4}
-	% 
-	%\blackroll{23} 
-	%\whiteroll{56}
-	% 
-	\blackboard % muestra tablero desde punto de vista del negro
-	%\whiteboard  % del blanco
-}
-\end{center}
+Después de todas estas pruebas, no se ha roto nada. Y LyX sigue compilando
+el PDF correctamente. 
 
-Texto
+He tenido que modificar los archivos de package:
+\begin{itemize}
+\item tikz-backgammon-dice.sty
+\item tikz-backgammon.sty
+\end{itemize}
+El documento lo he creado en LyX usando en el preambulo el comando
+\emph{\textbackslash usepackage\{tikz-backgammon\}}, e insertando
+sendas cajas de Código TeX para elaborar los diagramas.
 \end{document}
