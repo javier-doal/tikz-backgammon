@@ -18,3 +18,15 @@
  `tikz-backgammon.tex` and `tikz-backgammon.pdf`
 
  Version 0.8b 2022/12/06
+ 
+ Modified 25/02/2023 v0.9  by javier adding commands 
+ 
+ A series of commands have been created to represent Backgammon diagrams, the command indicates in the first part of how they are numbered the points, if from the point of view of the white (\whiteboardXX) or from the black (\blackboardXX). The last two letters of the command indicate where it will be placed the corresponding player's inner board (U or D: Up or Down, and R or L: Right or Lefts. Obtaining the commands:
+	\blackboardDL
+	\blackboardDR
+	\blackboardUL
+	\blackboardUR
+	\whiteboardDL
+	\whiteboardDR
+	\whiteboardUL
+	\whiteboardUR
