@@ -72,9 +72,9 @@
 
 \newcommand*{\black}{black} % for the stones 
 \newcommand*{\white}{white}
-\newcommand*{\boardblack}{brown}
-\newcommand*{\boardwhite}{olive!50}
-\newcommand*{\barcolor}{brown}
+\newcommand*{\boardblack}{red}     % \newcommand*{\boardblack}{brown}
+\newcommand*{\boardwhite}{yellow}  % \newcommand*{\boardwhite}{olive!50}
+\newcommand*{\barcolor}{cyan}      % \newcommand*{\barcolor}{brown}
 \newcommand*{\defaultxy}{.5em}
 \newlength{\betweengameskip}
 \setlength{\betweengameskip}{2\baselineskip}
@@ -429,7 +429,9 @@
 \newcommand*{\double}[2]{%
   \def\bk@doublenum{#2}
   \ifstrequal{#1}{neutral}
-     {\gdef\bk@doublestate{neutral double}}
+     {\gdef\bk@doublestate{neutral double}
+	  \gdef\bk@doublestateW{neutral double} % añado  2024-06-22 
+     }	  
      {\ifstrequal{#1}{white}
         {\gdef\bk@doublestate{white double}
 		 \gdef\bk@doublestateW{black double} % añado
